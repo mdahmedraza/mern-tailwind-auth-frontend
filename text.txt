@@ -1,0 +1,84 @@
+
+-tailwind css setup in your react project.....................................................
+to use tailwind css in your project...
+-in terminal 'npm install -D tailwindcss'....
+-and then also in same terminal 'npx tailwindcss init'....
+-and in your tailwind.config.js file in content section...
+content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+],
+-and then in index.css file...
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+-and then in terminal...
+npm run start
+-and then in App.js file run this code....
+export default function App() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  )
+}
+
+-FONT setup in our project.....................................................................
+-go to google fonts website..
+-select regular 400
+-choose import...
+-and go to index.css and paste it...
+
+-making 'Username.js' interactive using 'Formik' library........................................
+-so in terminal 'npm i formik react-hot-toast'....
+-both this  in Username.js we are going to validate or we are going to validate error or success messages.
+-in Username.js...
+import {Toaster} from 'react-hot-toast';
+import {useFormik} from 'formik';
+(or)
+const formik = useFormik({
+    initialValues:{
+        username: ''
+    },
+    validateOnBlur: false,
+    validateOnChange: false,
+    onSubmit: async values => {
+        console.log(values)
+    }
+})
+(or)
+<form className="py-1" onSubmit={formik.handleSubmit}>
+(or)
+<input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder="username" />
+
+-for validation of input text box.............................................................
+-in 'src' create 'helper' folder and in this folder 'validate.js'..
+-and in 'validate.js'...
+import toast from 'react-hot-toast';
+
+export async function usernameValidate(values){
+    const errors = usernameVerify({}, values);
+    return errors;
+}
+
+function usernameVerify(error={}, values){
+    if(!values.username){
+        error.username = toast.error('Username required....!');
+    }else if(values.username.includes("")){
+        error.username = toast.error('Invalid Username....!')
+    }
+    return error;
+}
+-and paste it in 'Username.js'...and add in formik constant....
+-and in top of 'Username.js'..
+<Toaster position='top-center' reverseOrder={false}></Toaster>
+
+FOR STATE MANAGEMENT WE ARE USING ZUSTAND....
+so in terminal 'npm i zustand'.....
+
+
+FOR VERIFY OTP............................................04:37:00
+-in google search 'ethereal email'....
+-go to 'create-ethereal-account'....
+-go to 'server' folder and then 'config.js' file and update the 'EMAIL' or 'PASSWORD'...
+-open the 'mail box'...
+-and if you register or send the otp you will see in there...

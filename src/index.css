@@ -1,13 +1,13 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*>*{
+    font-family: 'Cedarville Cursive', cursive;
 }
+body{
+    background: #dcdcdce6;
+    /* background-image: url('./assets/bg.png'); */
+    background-image: url('https://th.bing.com/th/id/R.355e85201893e5ca8b99aaa8f14e9678?rik=%2f37tw88Na8MbtA&riu=http%3a%2f%2fwww.baltana.com%2ffiles%2fwallpapers-4%2fAntique-Background-HD-Wallpapers-14133.jpg&ehk=Ll6KHnHqNTrbLIOVXWheOx9R%2fpNpqrL%2fWt20MBH8LIY%3d&risl=&pid=ImgRaw&r=0');
+} 
